@@ -10,15 +10,15 @@
         
         <!--Слайдер начало-->
         <?php //spawnSlider(); ?>
-        
-            <div class="main-slide cover" style="background: url(<?php echo get_template_directory_uri() ?>/assets/images/main1.jpg) center center / cover no-repeat; z-index: 10; opacity: 1;"></div>
           
-            <div class="main-slide cover" style="background: url(<?php echo get_template_directory_uri() ?>/assets/images/main2.jpg) center center / cover no-repeat; z-index: 20; opacity: 1;"></div>
+            <div class="main-slide cover" style="background: url(<?php echo get_template_directory_uri() ?>/assets/images/main1.jpg) center center / cover no-repeat; z-index: 10; opacity: 1;"></div>
   
-            <div class="main-slide cover" style="background: url(<?php echo get_template_directory_uri() ?>/assets/images/main3.jpg) center center / cover no-repeat; z-index: 30; opacity: 0;"></div>
+            <div class="main-slide cover" style="background: url(<?php echo get_template_directory_uri() ?>/assets/images/main2.jpg) center center / cover no-repeat; z-index: 20; opacity: 1;"></div>
         
-            <div class="main-slide cover" style="background: url(<?php echo get_template_directory_uri() ?>/assets/images/main4.jpg) center center / cover no-repeat; z-index: 40; opacity: 0;"></div>
-        <!--Слайдер конец-->
+            <div class="main-slide cover" style="background: url(<?php echo get_template_directory_uri() ?>/assets/images/main3.jpg) center center / cover no-repeat; z-index: 30; opacity: 1;"></div>
+
+            <div class="main-slide cover" style="background: url(<?php echo get_theme_mod( 'morskaya10_slide1_image' )?>) center center / cover no-repeat; z-index: 40; opacity: 1;"></div>
+            <!--Слайдер конец-->
 
         <div class="top cover"></div>
         <!--Затемняющий блок, покрывает picture-->

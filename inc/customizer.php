@@ -33,77 +33,82 @@ function morskaya10_customize_register( $wp_customize ) {
 	}
 
 	// custom
-	// Цвет ссылок меню на главной
-	$wp_customize->add_setting('morskaya10_nav_color', array(
-		'default' => '#ffffff',
-		'transport'=>'postMessage'
+	// Секция для изменения цветов
+	$wp_customize->add_section('morskaya10_site_colors', array(
+		'title' => 'Цвета сайта _М10',
+		'priority' => 1
 	));
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'morskaya10_nav_color',
-			array(
-				'label' => 'Цвет ссылок меню на главной',
-				'section' => 'colors',
-				'settings' => 'morskaya10_nav_color'
+		// Цвет ссылок меню на главной
+		$wp_customize->add_setting('morskaya10_nav_color', array(
+			'default' => '#ffffff',
+			'transport'=>'postMessage'
+		));
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'morskaya10_nav_color',
+				array(
+					'label' => 'Цвет ссылок меню на главной',
+					'section' => 'morskaya10_site_colors',
+					'settings' => 'morskaya10_nav_color'
+				)
 			)
-		)
-	);
+		);
 
-	// Цвет телефона и email на главной
-	$wp_customize->add_setting('morskaya10_contact_color', array(
-		'default' => '#ffffff',
-		'transport'=>'postMessage'
-	));
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'morskaya10_contact_color',
-			array(
-				'label' => 'Цвет телефона и email на главной',
-				'section' => 'colors',
-				'settings' => 'morskaya10_contact_color'
+		// Цвет телефона и email на главной
+		$wp_customize->add_setting('morskaya10_contact_color', array(
+			'default' => '#ffffff',
+			'transport'=>'postMessage'
+		));
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'morskaya10_contact_color',
+				array(
+					'label' => 'Цвет телефона и email на главной',
+					'section' => 'morskaya10_site_colors',
+					'settings' => 'morskaya10_contact_color'
+				)
 			)
-		)
-	);
+		);
 
-	// Цвет заголовка на главной
-	$wp_customize->add_setting('morskaya10_h1_color', array(
-		'default' => '#ffffff',
-		'transport'=>'postMessage'
-	));
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'morskaya10_h1_color',
-			array(
-				'label' => 'Цвет заголовка на главной',
-				'section' => 'colors',
-				'settings' => 'morskaya10_h1_color'
+		// Цвет заголовка на главной
+		$wp_customize->add_setting('morskaya10_h1_color', array(
+			'default' => '#ffffff',
+			'transport'=>'postMessage'
+		));
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'morskaya10_h1_color',
+				array(
+					'label' => 'Цвет заголовка на главной',
+					'section' => 'morskaya10_site_colors',
+					'settings' => 'morskaya10_h1_color'
+				)
 			)
-		)
-	);
+		);
 
-	// Цвет галочек на главной
-	$wp_customize->add_setting('morskaya10_mark_color', array(
-		'default' => '#ffffff',
-		'transport'=>'postMessage'
-	));
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'morskaya10_mark_color',
-			array(
-				'label' => 'Цвет галочек на главной',
-				'section' => 'colors',
-				'settings' => 'morskaya10_mark_color'
+		// Цвет галочек на главной
+		$wp_customize->add_setting('morskaya10_mark_color', array(
+			'default' => '#ffffff',
+			'transport'=>'postMessage'
+		));
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'morskaya10_mark_color',
+				array(
+					'label' => 'Цвет галочек на главной',
+					'section' => 'morskaya10_site_colors',
+					'settings' => 'morskaya10_mark_color'
+				)
 			)
-		)
-	);
+		);
 
-	// custom section
+	// Секция для изменения текстовок
 	$wp_customize->add_section('morskaya10_site_data', array(
-		'title' => 'Информация сайта',
+		'title' => 'Информация сайта _М10',
 		'priority' => 0
 	));
 		$wp_customize->add_setting('morskaya10_phone1', array(
@@ -175,6 +180,28 @@ function morskaya10_customize_register( $wp_customize ) {
 			)
 		);
 
+	
+	// Секция для картинок слайдера главной
+	$wp_customize->add_section('morskaya10_main_slider', array(
+		'title' => 'Слайдер на главной _М10',
+		'priority' => 2
+	));
+		$wp_customize->add_setting('morskaya10_slide1_image', array(
+			'default'      => get_template_directory_uri() . '/assets/images/main4.jpg',
+			'transport'    => 'postMessage'
+		));
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'morskaya10_slide1_image',
+				array(
+					'label'      => 'Изображение слайда 1',
+					'section'    => 'morskaya10_main_slider',
+					'settings'   => 'morskaya10_slide1_image'
+				)
+			)
+		);
+
 }
 add_action( 'customize_register', 'morskaya10_customize_register' );
 
@@ -193,6 +220,9 @@ function morskaya10_customize_css(){
 			}
 			.picture .wrapper .hero-info ul li {
 				color: <?php echo get_theme_mod('morskaya10_mark_color'); ?>;
+			}
+			.picture .main-slide:nth-last-child(1) {
+				background-image: <?php echo get_theme_mod('morskaya10_slide1_image'); ?>;
 			}
 		</style>
 	<?php

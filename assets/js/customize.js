@@ -42,4 +42,10 @@
         } );
     } );
 
+    wp.customize( 'morskaya10_slide1_image', function( value ) {
+        value.bind( function( newval ) {
+            $('.picture .main-slide').eq(3).css('background', `url(${newval}) no-repeat center center / cover`);
+        } );
+    } );
+
 } )( jQuery );
